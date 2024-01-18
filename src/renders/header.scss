@@ -1,11 +1,107 @@
 @import '../color.scss';
 @import '../assets/fonts/fonts.scss';
 
-.header_container{
-    //This height is mentioned for testing purpose
+.header_container {
     height: 100px;
     width: 100%;
     background-color: $blue;
     top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
 
+    .logo-container {
+        display: flex;
+        align-items: center;
+
+        .logo {
+            max-width: 50px; /* Adjust the max-width as needed */
+            margin-right: 10px; /* Adjust the margin as needed */
+        }
+
+        .company-name {
+            color: $white;
+            font-weight: bold;
+            font-size: 1.2em; /* Adjust the font size as needed */
+        }
+    }
+
+    .menu-icon {
+        display: none;
+        margin-left: 50%;
+        cursor: pointer;
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: $white;
+            margin: 5px 0;
+
+            &.bar-open {
+                transform: rotate(-45deg) translateY(-10px);
+            }
+        }
+    }
+
+    .navigation {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+            li {
+                margin-right: 20px;
+                cursor: pointer;
+
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navigation {
+            ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: $blue;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                display: none;
+                text-align: center;
+                padding: 10px;
+
+                li {
+                    margin: 10px 0;
+                }
+
+                &.nav-list-open {
+                    display: flex;
+                }
+            }
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        .nav-open {
+            .navigation {
+                ul {
+                    &.nav-list-open {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
 }
