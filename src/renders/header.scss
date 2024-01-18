@@ -1,0 +1,11 @@
+@import '../color.scss';
+@import '../assets/fonts/fonts.scss';
+
+.header_container{
+    //This height is mentioned for testing purpose
+    height: 100px;
+    width: 100%;
+    background-color: $blue;
+    top: 0;
+
+}
