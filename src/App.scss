@@ -1,3 +1,6 @@
 @import './global.scss';
 @import './color.scss';
-@import './assets/fonts/fonts.scss'
+@import './assets/fonts/fonts.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
