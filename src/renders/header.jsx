@@ -25,7 +25,6 @@ function Header() {
                     <li className="nav-home" id="nav-home"><Link to="/">HOME</Link></li>
                     <li className="nav-about" id="nav-about"><Link to="/about">ABOUT US</Link></li>
                     <li className="nav-products" id="nav-products"><Link to="/product">PRODUCTS</Link></li>
-                    <li className="nav-gallery" id="nav-gallery"><Link to="/gallery">GALLERY</Link></li>
                     <li className="nav-contact" id="nav-contact"><Link to="/contactus">CONTACT US</Link></li>
                     <li className="nav-login" id="nav-login"><Link to="/login">LOGIN</Link></li>
                 </ul>
