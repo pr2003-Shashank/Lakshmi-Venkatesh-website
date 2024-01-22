@@ -30,8 +30,7 @@
     }
 
     .menu-icon {
-        display: none;
-        margin-left: 50%;
+        display: none; /* Initially hide the menu icon */
         cursor: pointer;
 
         .bar {
@@ -67,11 +66,16 @@
     }
 
     @media (max-width: 768px) {
+        .menu-icon {
+            display: block; /* Show the menu icon after the specified media query */
+            margin-left: auto;
+        }
+
         .navigation {
             ul {
                 flex-direction: column;
                 position: absolute;
-                top: 60px;
+                top: 100px; /* Adjust the top position to avoid overlapping with the header */
                 left: 0;
                 width: 100%;
                 background-color: $blue;
@@ -85,22 +89,17 @@
                 }
 
                 &.nav-list-open {
-                    display: flex;
+                    display: block;
                 }
             }
-        }
-
-        .menu-icon {
-            display: block;
         }
 
         .nav-open {
             .navigation {
                 ul {
-                    &.nav-list-open {
-                        display: flex;
-                    }
+                    display: flex;
                 }
+                
             }
         }
     }
