@@ -120,6 +120,7 @@ function Header() {
 					selected={location.pathname==='/'}
 					onClick={(e)=>{
 						navigate('/');
+						setOpenDrawer(false);
 					}}
 				>
 					<ListItemText primary="HOME"/>
@@ -128,6 +129,8 @@ function Header() {
 					selected={location.pathname==='/product'}
 					onClick={(e)=>{
 						navigate('/product');
+						setOpenDrawer(false);
+
 					}}	
 				>
 	 				<ListItemText primary="PRODUCTS"/>
@@ -136,6 +139,8 @@ function Header() {
 					selected={location.pathname==='/about'}
 					onClick={(e)=>{
 						navigate('/about');
+						setOpenDrawer(false);
+
 					}}	
 				>
 	 				<ListItemText primary="ABOUT US"/>
@@ -144,6 +149,8 @@ function Header() {
 					selected={location.pathname==='/contactus'}
 					onClick={(e)=>{
 						navigate('/contactus');
+						setOpenDrawer(false);
+
 					}}	
 				>
 					<ListItemText primary="CONTACT US"/>
