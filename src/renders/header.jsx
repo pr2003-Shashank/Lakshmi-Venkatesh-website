@@ -191,7 +191,7 @@ function Header() {
 					}
 					onClick={() => setOpenDrawer(!openDrawer)}
 				>
-					<NavToggleIcon />
+					<NavToggleIcon isOpen={openDrawer}/>
 				</IconButton>
 			</div>
 		</Box>
