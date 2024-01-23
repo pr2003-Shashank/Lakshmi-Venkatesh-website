@@ -1,11 +1,12 @@
 import React from "react";
 import './home.scss';
+import { SignUp } from "../components/signUp";
 
 function Login(){
     return(
-        <div className="home_container">
-            welcome and login
-        </div>
+     <div>
+        <SignUp/>
+     </div>
     )
 }
 

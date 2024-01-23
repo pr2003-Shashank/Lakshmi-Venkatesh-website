@@ -5,6 +5,7 @@ import AboutUs from "./pages/about";
 import Product from "./pages/product";
 import ContactUs from "./pages/contactus";
 import Login from "./pages/login";
+import  NewUser  from './components/newUser';
 const AppRoutes = (props) => {
     return (
         <>
@@ -16,6 +17,7 @@ const AppRoutes = (props) => {
                     <Route path="product" element={<Product />} />                    
                     <Route path="contactus" element={<ContactUs />} />
                     <Route path="login" element={<Login />} />
+                    <Route path="newUser" element={<NewUser />} />
                     
                 </Route>
             </Routes>
