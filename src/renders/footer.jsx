@@ -3,7 +3,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
-import footer_icon from '../assets/images/Logo-lv(1).png';
+import footer_icon from '../assets/images/header_logo.png';
 import './footer.scss';
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";

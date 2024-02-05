@@ -1,0 +1,21 @@
+@import '../../color.scss';
+@import '../../assets/fonts/fonts.scss';
+
+
+.panel_container {
+    .MuiAppBar-root {
+        display: flex;
+        background-color: $light_blue;
+        color: $white;
+
+        .MuiToolbar-root {
+            justify-content: space-between;
+        }
+    }
+
+    .tools_block {
+        display: flex;
+        justify-content: space-between;
+
+    }
+}

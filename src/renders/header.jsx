@@ -7,9 +7,10 @@ import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Typography } from '@mui/material';
-import header_icon from '../assets/images/Logo-lv(1).png';
-import {useNavigate, useLocation} from 'react-router-dom';
-import { NavToggleIcon , LogArrowIcon} from './icon';
+import header_icon from '../assets/images/header_logo.png';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { NavToggleIcon, LogArrowIcon } from './icon';
+import { useState } from 'react';
 
 
 function LogInUserIcon(props) {
@@ -103,7 +104,7 @@ function NavMenuArrowIcon(props) {
 }
 
 function Header() {
-	
+
 	const [openDrawer, setOpenDrawer] = React.useState(false);
 
 	const handleRefreshToHomePage = () => {
@@ -114,46 +115,46 @@ function Header() {
 	const location = useLocation();
 
 	const Navbar = () => {
-		return(
+		return (
 			<List component="nav" aria-label='main mailbox folders'>
 				<ListItemButton
-					selected={location.pathname==='/'}
-					onClick={(e)=>{
+					selected={location.pathname === '/'}
+					onClick={(e) => {
 						navigate('/');
 						setOpenDrawer(false);
 					}}
 				>
-					<ListItemText primary="HOME"/>
+					<ListItemText primary="HOME" />
 				</ListItemButton>
-	 			<ListItemButton
-					selected={location.pathname==='/product'}
-					onClick={(e)=>{
+				<ListItemButton
+					selected={location.pathname === '/product'}
+					onClick={(e) => {
 						navigate('/product');
 						setOpenDrawer(false);
 
-					}}	
+					}}
 				>
-	 				<ListItemText primary="PRODUCTS"/>
-	 			</ListItemButton>
-	 			<ListItemButton
-					selected={location.pathname==='/about'}
-					onClick={(e)=>{
+					<ListItemText primary="PRODUCTS" />
+				</ListItemButton>
+				<ListItemButton
+					selected={location.pathname === '/about'}
+					onClick={(e) => {
 						navigate('/about');
 						setOpenDrawer(false);
 
-					}}	
+					}}
 				>
-	 				<ListItemText primary="ABOUT US"/>
-	 			</ListItemButton>
-	 			<ListItemButton
-					selected={location.pathname==='/contactus'}
-					onClick={(e)=>{
+					<ListItemText primary="ABOUT US" />
+				</ListItemButton>
+				<ListItemButton
+					selected={location.pathname === '/contactus'}
+					onClick={(e) => {
 						navigate('/contactus');
 						setOpenDrawer(false);
 
-					}}	
+					}}
 				>
-					<ListItemText primary="CONTACT US"/>
+					<ListItemText primary="CONTACT US" />
 				</ListItemButton>
 			</List>
 		)
@@ -171,40 +172,42 @@ function Header() {
 		);
 	};
 
-  return (
-	<div className='header_container'>
-		<Box>
-			<div className='title_container'>
-				<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage}/>
-				<Typography className='header_title' onClick={handleRefreshToHomePage}></Typography>
-			</div>
-			<Navbar/>
-			<div className='right_container'>
-				<Button
-					className="login_btn"
-					variant="contained"
-					startIcon={<LogInUserIcon />}
-					endIcon={<LogArrowIcon />}
-					onClick={(e) => {
-						navigate('/login');
-					}}
-				>
-					<span>LOGIN</span>
-				</Button>
-				<IconButton
-					aria-label="Menu"
-					className={
-						'navbar_toggler_btn' + (openDrawer ? ' drawer_open' : '')
-					}
-					onClick={() => setOpenDrawer(!openDrawer)}
-				>
-					<NavToggleIcon isOpen={openDrawer}/>
-				</IconButton>
-			</div>
-		</Box>
-		<MobileDrawer/>
-	</div>
-  )
+	return (
+		<div className='header_container'>
+			<Box>
+				<div className='title_container'>
+					<img src={header_icon} alt='icon' className='header_icon' onClick={handleRefreshToHomePage} />
+					<Typography className='header_title' onClick={handleRefreshToHomePage}></Typography>
+				</div>
+				<Navbar />
+				<div className='right_container'>
+					<Button
+						className="login_btn"
+						variant="contained"
+						startIcon={<LogInUserIcon />}
+						endIcon={<LogArrowIcon />}
+						onClick={(e)=>
+							window.open('/login')
+						}
+					>
+						<span>LOGIN</span>
+					</Button>
+					<IconButton
+						aria-label="Menu"
+						className={
+							'navbar_toggler_btn' + (openDrawer ? ' drawer_open' : '')
+						}
+						onClick={() => setOpenDrawer(!openDrawer)}
+					>
+						<NavToggleIcon isOpen={openDrawer} />
+					</IconButton>
+				</div>
+			</Box>
+			<MobileDrawer />
+		</div>
+	)
 }
 
 export default Header
+
+

@@ -1,0 +1,12 @@
+@import '../../color.scss';
+@import '../../assets/fonts/fonts.scss';
+
+.content_container{
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: GillSans;
+    font-size: 1.8em;
+    color: $blue;
+}
