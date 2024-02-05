@@ -1,15 +1,69 @@
 @import '../color.scss';
 @import '../assets/fonts/fonts.scss';
 
-.home_container {
-    //This height is mentioned for testing purpose
+.login_container {
     display: flex;
     align-items: center;
-    height: 500px;
     text-align: center;
+    height: 100vh;
+    width: 100vw;
     justify-content: center;
     color: $blue;
     font-family: GillSans;
     font-size: 1.5em;
     background-color: $white;
+    // background-image: linear-gradient(#b6dff5,$white);
+    
+    .MuiStack-root {
+        display: flex;
+        @media screen and (max-width: 1440px) {
+            width: 30vw ;
+        }
+        @media screen and (max-width: 1200px) {
+            width: 40vw ;
+        }
+        @media screen and (max-width: 991px) {
+            width: 60vw ;
+        }
+        @media screen and (max-width: 768px) {
+            width: 60vw;
+        }
+        @media screen and (max-width: 576px) {
+            width: 80vw;
+        }
+        .MuiTypography-root{
+            color: $blue;
+            font-size: 1.4em;
+            font-family: GillSan;
+        }
+        .logo{
+            height: 120px;
+            width: 180px;
+            align-self: center;
+        }
+        .MuiFormControl-root{
+            display: flex;
+            width: 100%;
+            .MuiFormLabel-root{
+                color: $blue;
+            } 
+            .MuiButtonBase-root{
+                background-color: transparent;
+            }          
+        }
+        .forgot_pass{
+            display: flex;
+            justify-content: flex-end;
+            .MuiLink-root{
+                font-family: GillSans;
+            font-size: 0.7em;
+            text-decoration: none;
+            }
+        }
+        .MuiButtonBase-root{
+            display: flex;
+            background-color : $blue ;
+            width: 100%;
+        }
+    }
 }

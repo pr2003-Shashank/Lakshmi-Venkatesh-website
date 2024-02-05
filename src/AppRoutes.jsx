@@ -5,7 +5,10 @@ import AboutUs from "./pages/about";
 import Product from "./pages/product";
 import ContactUs from "./pages/contactus";
 import Login from "./pages/login";
-const AppRoutes = (props) => {
+import Admin from './Dashboards/view/admin';
+import User from "./Dashboards/view/user";
+
+function AppRoutes(props) {
     return (
         <>
             <Routes>
@@ -13,13 +16,14 @@ const AppRoutes = (props) => {
                     <Route path="" element={<Home />} />
                     <Route path='' element={<Navigate to='/home' />} />
                     <Route path="about" element={<AboutUs />} />
-                    <Route path="product" element={<Product />} />                    
+                    <Route path="product" element={<Product />} />
                     <Route path="contactus" element={<ContactUs />} />
-                    <Route path="login" element={<Login />} />
-                    
                 </Route>
+                <Route path="/login" element={<Login />} />
+                <Route path="/admin" element={<Admin/>}/>
+                <Route path="/user" element={<User/>}/>
             </Routes>
         </>
-    )
-};
+    );
+}
 export default AppRoutes;

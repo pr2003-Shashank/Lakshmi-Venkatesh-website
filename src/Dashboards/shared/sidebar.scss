@@ -1,0 +1,63 @@
+@import '../../color.scss';
+@import '../../assets/fonts/fonts.scss';
+
+
+//This the styling for the drawer component
+.drawer_container {
+    .MuiToolbar-root {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        .logo{
+            height: 80px;
+            width: 120px;
+        }
+    }
+
+    .MuiDivider-root {
+        background-color: $white;
+    }
+
+    .MuiList-root {
+        color: $blue;
+
+        .MuiListItem-root {
+            .MuiButtonBase-root {
+                .MuiListItemText-root {
+                    .MuiTypography-root {
+                        font-family: GillSans;
+                        font-size: 1.1em;
+                    }
+                }
+
+                &.Mui-selected {
+                    background-color: $blue;
+
+                    .MuiListItemText-root {
+                        .MuiTypography-root {
+                            color: $white;
+                            font-family: GillSans;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebar_container {
+    .MuiDrawer-root {
+        left: 0;
+        z-index: 10;
+        width: 240px;
+        flex-shrink: 0;
+
+        .MuiDrawer-paper {
+            // display: flex;
+            box-sizing: border-box;
+            width: 240px;
+            background-color: $light_blue;
+        }
+    }
+}
