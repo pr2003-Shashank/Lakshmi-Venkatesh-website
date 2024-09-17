@@ -141,7 +141,6 @@ function Header() {
 					onClick={(e) => {
 						navigate('/about');
 						setOpenDrawer(false);
-
 					}}
 				>
 					<ListItemText primary="ABOUT US" />
