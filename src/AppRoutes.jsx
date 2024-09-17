@@ -7,7 +7,7 @@ import ContactUs from "./pages/contactus.jsx";
 import Login from "./pages/login.jsx";
 // import Admin from './dashboards/view/admin.jsx';
 // import User from "./dashboards/view/user.jsx";
-import Content from "./dashboards/shared/content.jsx";
+// import Content from "./dashboards/shared/content.jsx";
 
 function AppRoutes(props) {
     return (
