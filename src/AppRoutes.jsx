@@ -6,7 +6,7 @@ import Product from "./pages/product.jsx";
 import ContactUs from "./pages/contactus.jsx";
 import Login from "./pages/login.jsx";
 // import Admin from './dashboards/view/admin.jsx';
-import User from "./dashboards/view/user.jsx";
+// import User from "./dashboards/view/user.jsx";
 import Content from "./dashboards/shared/content.jsx";
 
 function AppRoutes(props) {
@@ -28,7 +28,7 @@ function AppRoutes(props) {
                     <Route path="orders" element={<Content selectedPage="orders" />} />
                     <Route path="account" element={<Content selectedPage="account" />} />
                 </Route> */}
-                <Route path="/user" element={<User />} />
+                {/* <Route path="/user" element={<User />} /> */}
 
             </Routes>
         </>
