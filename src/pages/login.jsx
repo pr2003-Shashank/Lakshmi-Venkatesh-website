@@ -24,7 +24,7 @@ function Login() {
 
     const handleLoginAccess=()=>{
         if (loginData.username==="admin"&&loginData.password==="admin") {
-            navigate('/admin');
+            navigate('/admin/');
         }
         else if(loginData.username==="user"&&loginData.password==="user"){
             navigate('/user');

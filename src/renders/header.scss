@@ -29,8 +29,8 @@
             //     padding: 2.5%;
             // }
             .header_icon{
-                width: 95px;
-                max-height: 95px;
+                width: 105px;
+                max-height: 105px;
                 // @media screen and (max-width: 768px) {
                 //     width: 32px;
                 //     max-height: 32px;
@@ -72,6 +72,7 @@
             }
             .MuiButtonBase-root{
                 padding: 8px 24px;
+                margin: 5% 0 5% 0;
                 flex: none;
                 min-width: 130px;
                 @media screen and (max-width: 1200px) {
@@ -87,12 +88,13 @@
                         font-family: GillSans;
                         text-align: center;
                         &:hover{
-                            font-weight: bolder;
+                            font-family: GillSans-Medium;
                         }
                     }
                 }
                 &.Mui-selected{
-                    background-color: $light_blue;
+                    background-color: $white;
+                    border-radius: 6px;
                     .MuiListItemText-root{
                         .MuiTypography-root{
                             color: $blue;
@@ -125,7 +127,7 @@
                 align-items: center;
                 justify-content: center;
                 box-shadow: none;
-                border-radius: 0px;
+                border-radius: 6px;
                 font-size: 0.9em;
                 font-family: GillSans-Medium;
                 color: $blue;

@@ -5,8 +5,9 @@ import AboutUs from "./pages/about";
 import Product from "./pages/product";
 import ContactUs from "./pages/contactus";
 import Login from "./pages/login";
-import Admin from './Dashboards/view/admin';
-import User from "./Dashboards/view/user";
+import Admin from './dashboards/view/admin';
+import User from "./dashboards/view/user";
+import Content from "./dashboards/shared/content";
 
 function AppRoutes(props) {
     return (
@@ -20,8 +21,15 @@ function AppRoutes(props) {
                     <Route path="contactus" element={<ContactUs />} />
                 </Route>
                 <Route path="/login" element={<Login />} />
-                <Route path="/admin" element={<Admin/>}/>
-                <Route path="/user" element={<User/>}/>
+                <Route path="/admin/" element={<Admin />}>
+                    <Route path="" element={<Content selectedPage="overview" />} />
+                    <Route path="products" element={<Content selectedPage="products" />} />
+                    <Route path="users" element={<Content selectedPage="users" />} />
+                    <Route path="orders" element={<Content selectedPage="orders" />} />
+                    <Route path="account" element={<Content selectedPage="account" />} />
+                </Route>
+                <Route path="/user" element={<User />} />
+
             </Routes>
         </>
     );

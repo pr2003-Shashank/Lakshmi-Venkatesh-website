@@ -23,6 +23,11 @@
 
         .MuiListItem-root {
             .MuiButtonBase-root {
+                .MuiListItemIcon-root{
+                    .MuiSvgIcon-root{
+                        color: $blue;
+                    }
+                }
                 .MuiListItemText-root {
                     .MuiTypography-root {
                         font-family: GillSans;
@@ -32,7 +37,11 @@
 
                 &.Mui-selected {
                     background-color: $blue;
-
+                    .MuiListItemIcon-root{
+                        .MuiSvgIcon-root{
+                            color: $white;
+                        }
+                    }
                     .MuiListItemText-root {
                         .MuiTypography-root {
                             color: $white;
@@ -57,7 +66,7 @@
             // display: flex;
             box-sizing: border-box;
             width: 240px;
-            background-color: $light_blue;
+            background-color: $white;
         }
     }
 }

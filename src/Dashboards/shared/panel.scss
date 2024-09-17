@@ -3,19 +3,38 @@
 
 
 .panel_container {
-    .MuiAppBar-root {
+    display: flex;
+
+    .MuiPaper-root {
         display: flex;
-        background-color: $light_blue;
+        background-color: $white;
         color: $white;
+        top: 0;
+        z-index: 6;
+        position: sticky;
+        width: 100%;
 
         .MuiToolbar-root {
+            display: flex;
+            width: 100%;
             justify-content: space-between;
+            .MuiButtonBase-root{
+                .MuiSvgIcon-root{
+                    color: $blue;
+                }
+            }
+            .tools_block {
+                display: flex;
+                justify-content: space-between;
+                .MuiSvgIcon-root{
+                    color: $blue;
+                    height: 30px;
+                    width: 30px;
+                }
+        
+            }
         }
     }
 
-    .tools_block {
-        display: flex;
-        justify-content: space-between;
-
-    }
+    
 }

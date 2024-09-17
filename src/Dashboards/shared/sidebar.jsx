@@ -6,8 +6,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import BarChartIcon from '@mui/icons-material/BarChart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -16,14 +15,14 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Logo from '../../assets/images/global_logo.png';
 
 let listitems = [
-    { text: 'Dashboard', icon: <InboxIcon />, path: '/admin' },
-    { text: 'Products', icon: <ShoppingCartIcon />, path: '#' },
-    { text: 'Users', icon: <PersonIcon />, path: '#' },
-    { text: 'Orders', icon: <AssignmentIcon />, path: '#' },
-    { text: 'Sign Out', icon: <ExitToAppIcon />, path: '/login' },
+    { text: 'Overview', icon: <BarChartIcon />, page: '' },
+    { text: 'Products', icon: <ShoppingCartIcon />, page: 'products' },
+    { text: 'Users', icon: <PersonIcon />, page: 'users' },
+    { text: 'Orders', icon: <AssignmentIcon />, page: 'orders' },
+    { text: 'Sign Out', icon: <ExitToAppIcon />, page: '/login' },
 ]
 
-function Sidebar({ mobileOpen, onClose }) {
+function Sidebar({ mobileOpen, onClose, onListItemClick }) {
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -34,9 +33,17 @@ function Sidebar({ mobileOpen, onClose }) {
         setIsClosing(false);
     };
 
-    const handleItemClick = (path) => {
-        navigate(path);
-        onClose();
+    const handleItemClick = (page) => {
+        if (page !== '/login') {
+            navigate(`/admin/${page}`); // Navigate to the inner link
+        } else {
+            navigate(page); // For the 'Sign Out' option
+        }
+        onClose(); // Close the sidebar
+
+        if (onListItemClick) {
+            onListItemClick(page);
+        }
     }
 
     const drawer = (
@@ -45,25 +52,12 @@ function Sidebar({ mobileOpen, onClose }) {
                 <img className="logo" src={Logo} />
             </Toolbar>
             <Divider />
-            {/* <List>
-                {listitems.map((item, index) => (
-                    <ListItem key={item.text} disablePadding>
-                        <ListItemButton
-                            onClick={() => handleItemClick(item.path)}
-                            selected={location.pathname === (item.path)}
-                        >
-                            <ListItemIcon>{item.icon}</ListItemIcon>
-                            <ListItemText>{item.text}</ListItemText>
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List> */}
             <List>
                 {listitems.slice(0, 4).map((item, index) => (
                     <ListItem key={item.text} disablePadding>
                         <ListItemButton
-                            onClick={() => handleItemClick(item.path)}
-                            selected={location.pathname === item.path}
+                            onClick={() => handleItemClick(item.page)}
+                            selected={location.pathname === `/admin/${item.page}`}
                         >
                             <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
@@ -74,8 +68,11 @@ function Sidebar({ mobileOpen, onClose }) {
                 {listitems.slice(4).map((item, index) => (
                     <ListItem key={item.text} disablePadding>
                         <ListItemButton
-                            onClick={() => handleItemClick(item.path)}
-                            selected={location.pathname === item.path}
+                            onClick={(e) => {
+                                navigate(item.page);
+                                onClose();
+                            }}
+                            selected={location.pathname === item.page}
                         >
                             <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
