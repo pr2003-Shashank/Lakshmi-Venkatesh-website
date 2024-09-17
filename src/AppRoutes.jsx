@@ -5,7 +5,7 @@ import AboutUs from "./pages/about.jsx";
 import Product from "./pages/product.jsx";
 import ContactUs from "./pages/contactus.jsx";
 import Login from "./pages/login.jsx";
-import Admin from './dashboards/view/admin.jsx';
+// import Admin from './dashboards/view/admin.jsx';
 import User from "./dashboards/view/user.jsx";
 import Content from "./dashboards/shared/content.jsx";
 
@@ -21,13 +21,13 @@ function AppRoutes(props) {
                     <Route path="contactus" element={<ContactUs />} />
                 </Route>
                 <Route path="/login" element={<Login />} />
-                <Route path="/admin/" element={<Admin />}>
+                {/* <Route path="/admin/" element={<Admin />}>
                     <Route path="" element={<Content selectedPage="overview" />} />
                     <Route path="products" element={<Content selectedPage="products" />} />
                     <Route path="users" element={<Content selectedPage="users" />} />
                     <Route path="orders" element={<Content selectedPage="orders" />} />
                     <Route path="account" element={<Content selectedPage="account" />} />
-                </Route>
+                </Route> */}
                 <Route path="/user" element={<User />} />
 
             </Routes>
