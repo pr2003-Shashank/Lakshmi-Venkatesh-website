@@ -1,13 +1,13 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import Main from "./layouts/Main";
-import Home from "./pages/home";
-import AboutUs from "./pages/about";
-import Product from "./pages/product";
-import ContactUs from "./pages/contactus";
-import Login from "./pages/login";
-import Admin from './dashboards/view/admin';
-import User from "./dashboards/view/user";
-import Content from "./dashboards/shared/content";
+import Main from "./layouts/Main.jsx";
+import Home from "./pages/home.jsx";
+import AboutUs from "./pages/about.jsx";
+import Product from "./pages/product.jsx";
+import ContactUs from "./pages/contactus.jsx";
+import Login from "./pages/login.jsx";
+import Admin from './dashboards/view/admin.jsx';
+import User from "./dashboards/view/user.jsx";
+import Content from "./dashboards/shared/content.jsx";
 
 function AppRoutes(props) {
     return (
